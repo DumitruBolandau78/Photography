@@ -1,0 +1,190 @@
+@use 'variable';
+
+*, *::after, *::before {
+    box-sizing: border-box !important;
+}
+
+body {
+    background-color: rgba(22, 22, 22, 1);
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+.header {
+    .logo a {
+        font-family: 'Panchang-Variable';
+    }
+
+    nav a {
+        font-family: variable.$fontPlayfair;
+        font-weight: 500;
+    }
+}
+
+.home {
+    color: variable.$white;
+
+    a {
+        text-decoration: none;
+        color: variable.$white;
+        cursor: pointer;
+    }
+
+    .title {
+        font-family: variable.$fontPlayfair;
+        font-weight: 900;
+        letter-spacing: 3px;
+        font-size: 60px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .description {
+        font-size: 20px;
+    }
+
+    ul {
+        list-style: none;
+
+        svg {
+            margin-right: 20px;
+        }
+    }
+
+    .schedule-now button {
+        padding: 15px 50px;
+        outline: none;
+        border: none;
+        background-color: variable.$dark-green;
+        color: variable.$white;
+    }
+
+    .our-clients {
+        font-family: variable.$fontPlayfair;
+    }
+}
+
+.gray-bg {
+    height: 1000px;
+    background-color: variable.$gray;
+    z-index: -1;
+}
+
+.about {
+    margin-top: 200px;
+    
+    .title {
+        font-family: variable.$fontPlayfair;
+    }
+
+    img {
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .galery {
+        padding: 0 !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+}
+
+.services {
+    color: variable.$white;
+
+    .title {
+        font-family: variable.$fontPlayfair;
+    }
+
+    .description .text{
+        color: rgba(248, 246, 224, 0.6);
+    }
+
+    .margin-top150 {
+        margin-top: 150px;
+    }
+
+    .something-awesome .title{
+        font-family: variable.$fontPlayfair;
+        margin-bottom: 25px;
+        margin-top: 20px;
+    }
+}
+
+.contact-us {
+    background-color: variable.$dark-green;
+    margin: 100px 0;
+
+    .title {
+        font-family: variable.$fontPlayfair;
+        color: variable.$white;
+    }
+
+    svg {
+        margin-left: 10px;
+    }
+
+    .schedule-now button {
+        padding: 15px 50px;
+        outline: none;
+        border: none;
+        background-color: variable.$white;
+        color: variable.$black;
+    }
+
+    img {
+        width: 100%;
+        border-left: 2px solid white;
+    }
+}
+
+.footer {
+    color: variable.$white;
+    margin: 0 auto;
+
+    .first {
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-family: variable.$fontPlayfair;
+    }
+
+    .margin-bottom100 {
+        margin-bottom: 100px !important;
+    }
+
+    .first.favor {
+        margin-bottom: 30px;
+        font-family: 'Panchang-Variable';
+    }
+
+    .second a {
+        text-decoration: none;
+        color: variable.$white;
+    }
+
+    .second > div {
+        display: flex;
+        align-items: center;
+        word-break: break-all;
+        margin: 7px 0;
+        justify-content: center;
+    }
+
+    svg {
+        margin-right: 10px;
+    }
+
+    .social-media-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+}
