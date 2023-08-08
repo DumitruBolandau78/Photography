@@ -1,0 +1,116 @@
+.home .button-container-1 {
+  position: relative;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+}
+.home .button-container-1 button {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  padding: 15px 60px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: #2E3418;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  animation: ani2 0.7s steps(22) forwards;
+  border: 1px solid;
+  transition: 0.4s;
+}
+.home .button-container-1 button:hover {
+  animation: ani 0.7s steps(22) forwards;
+  border-left: 1px solid red;
+  border-top: 1px solid red;
+  border-bottom: 1px solid yellow;
+  border-right: 1px solid yellow;
+}
+.home .button-container-1 .mas {
+  position: absolute;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  overflow: hidden;
+  font-weight: bold;
+  padding: 15px 60px;
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+.contact-us .button-container-1 {
+  position: relative;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+}
+.contact-us .button-container-1 button {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  padding: 15px 60px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: #FFFFFF;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  animation: ani2 0.7s steps(22) forwards;
+  border: 1px solid;
+  transition: 0.4s;
+}
+.contact-us .button-container-1 button:hover {
+  animation: ani 0.7s steps(22) forwards;
+  border-left: 1px solid red;
+  border-top: 1px solid red;
+  border-bottom: 1px solid yellow;
+  border-right: 1px solid yellow;
+}
+.contact-us .button-container-1 .mas {
+  position: absolute;
+  color: #fff;
+  background-color: #000000;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  overflow: hidden;
+  font-weight: bold;
+  padding: 15px 60px;
+  border: 1px solid;
+}/*# sourceMappingURL=btn-animation.css.map */

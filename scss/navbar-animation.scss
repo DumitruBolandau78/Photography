@@ -1,0 +1,99 @@
+@use 'variable';
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 !important;
+
+    li {
+        padding: 0 20px;
+    }
+
+    a {
+        font-family: variable.$fontPlayfair;
+        font-weight: 500;
+        text-decoration: none;
+        color: white;
+        position: relative;
+        padding: .5em .8em;
+        font-size: 18px;
+    }
+
+    a::before,
+    a::after {
+        content: '';
+        height: 14px;
+        width: 14px;
+        position: absolute;
+        transition: all .35s ease;
+        opacity: 0;
+    }
+
+    a::before {
+        content: '';
+        right: 0;
+        top: 0;
+        border-top: 3px solid #3E8914;
+        border-right: 3px solid #2E640F;
+        transform: translate(-100%, 50%);
+    }
+
+    a::after {
+        content: '';
+        left: 0;
+        bottom: 0;
+        border-bottom: 3px solid #3E8914;
+        border-left: 3px solid #3E8914;
+        transform: translate(100%, -50%);
+    }
+
+    a:hover::before,
+    a:hover::after {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    a:hover {
+        color: #3E8914;
+    }
+
+    .active {
+        padding: .5em .8em !important;
+        color: #EF0107 !important;
+        position: relative !important;
+        text-decoration: none !important;
+        font-size: 18px !important;
+    }
+    
+    .active::before,
+    .active::after {
+        content: '';
+        height: 14px !important;
+        width: 14px !important;
+        position: absolute !important;
+        transition: all .35s ease !important;
+        opacity: 0 !important;
+    }
+    
+    .active::before {
+        content: '';
+        right: 0 !important;
+        top: 0 !important;
+        border-top: 3px solid #3E8914 !important;
+        border-right: 3px solid #2E640F !important;
+        transform: translate(-100%, 50%) !important;
+        transform: translate(0, 0) !important;
+        opacity: 1 !important;
+    }
+    
+    .active::after {
+        content: '';
+        left: 0 !important;
+        bottom: 0 !important;
+        border-bottom: 3px solid #2E640F !important;
+        border-left: 3px solid #3E8914 !important;
+        transform: translate(100%, -50%) !important;
+        transform: translate(0, 0) !important;
+        opacity: 1 !important;
+    }
+}

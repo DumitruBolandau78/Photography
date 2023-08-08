@@ -11,16 +11,22 @@ h2 {
   margin: 0;
 }
 
+.header {
+  z-index: 1;
+  background-color: rgb(22, 22, 22);
+  box-shadow: 0px 15px 10px -15px #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 .header .logo a {
   font-family: "Panchang-Variable";
-}
-.header nav a {
-  font-family: "Playfair Display";
-  font-weight: 500;
 }
 
 .home {
   color: #FFFFFF;
+  padding-top: 250px !important;
+  margin-top: -100px !important;
 }
 .home a {
   text-decoration: none;
@@ -32,6 +38,9 @@ h2 {
   font-weight: 900;
   letter-spacing: 3px;
   font-size: 60px;
+}
+.home .title span {
+  color: #EF0107;
 }
 .home img {
   width: 100%;
@@ -46,13 +55,6 @@ h2 {
 .home ul svg {
   margin-right: 20px;
 }
-.home .schedule-now button {
-  padding: 15px 50px;
-  outline: none;
-  border: none;
-  background-color: #2E3418;
-  color: #FFFFFF;
-}
 .home .our-clients {
   font-family: "Playfair Display";
 }
@@ -64,13 +66,15 @@ h2 {
 }
 
 .about {
-  margin-top: 200px;
+  padding-top: 100px !important;
+  margin-top: -50px !important;
 }
 .about .title {
   font-family: "Playfair Display";
 }
 .about img {
   width: 100%;
+  max-width: 100%;
   -o-object-position: center;
      object-position: center;
   -o-object-fit: cover;
@@ -85,6 +89,8 @@ h2 {
 
 .services {
   color: #FFFFFF;
+  padding-top: 70px !important;
+  margin-top: -50px !important;
 }
 .services .title {
   font-family: "Playfair Display";
@@ -100,10 +106,24 @@ h2 {
   margin-bottom: 25px;
   margin-top: 20px;
 }
+.services img {
+  width: 100%;
+  max-width: 100%;
+}
+
+#contact-us {
+  padding-top: 40px;
+}
+
+.contact-us-wrapper .part-of-bg {
+  background-color: #2E3418;
+  z-index: -1;
+  height: 100%;
+}
 
 .contact-us {
   background-color: #2E3418;
-  margin: 100px 0;
+  margin: 100px auto;
 }
 .contact-us .title {
   font-family: "Playfair Display";
@@ -127,6 +147,10 @@ h2 {
 .footer {
   color: #FFFFFF;
   margin: 0 auto;
+}
+.footer .get-in-touch svg {
+  min-width: 20px;
+  min-height: 20px;
 }
 .footer .first {
   margin-bottom: 30px;
@@ -155,7 +179,17 @@ h2 {
   margin-right: 10px;
 }
 .footer .social-media-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin: 0;
+  border-radius: 50%;
+  transition: 0.3s;
+  padding: 1px;
+}
+.footer .social-media-icon:hover {
+  box-shadow: yellow 0px 0px 15px, yellow 0px 0px 15px;
+}
+
+.current_page_item {
+  border-bottom: 2px solid white;
 }/*# sourceMappingURL=main.css.map */

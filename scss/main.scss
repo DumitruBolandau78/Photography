@@ -14,19 +14,22 @@ h2 {
 }
 
 .header {
+    z-index: 1;
+    background-color: rgba(22, 22, 22, 1);
+    box-shadow: 0px 15px 10px -15px #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+
     .logo a {
         font-family: 'Panchang-Variable';
-    }
-
-    nav a {
-        font-family: variable.$fontPlayfair;
-        font-weight: 500;
     }
 }
 
 .home {
     color: variable.$white;
-
+    padding-top: 250px !important; 
+    margin-top: -100px !important;
     a {
         text-decoration: none;
         color: variable.$white;
@@ -38,6 +41,10 @@ h2 {
         font-weight: 900;
         letter-spacing: 3px;
         font-size: 60px;
+
+        span {
+            color: #EF0107;
+        }
     }
 
     img {
@@ -57,14 +64,6 @@ h2 {
         }
     }
 
-    .schedule-now button {
-        padding: 15px 50px;
-        outline: none;
-        border: none;
-        background-color: variable.$dark-green;
-        color: variable.$white;
-    }
-
     .our-clients {
         font-family: variable.$fontPlayfair;
     }
@@ -77,7 +76,8 @@ h2 {
 }
 
 .about {
-    margin-top: 200px;
+    padding-top: 100px !important; 
+    margin-top: -50px !important;
     
     .title {
         font-family: variable.$fontPlayfair;
@@ -85,6 +85,7 @@ h2 {
 
     img {
         width: 100%;
+        max-width: 100%;
         object-position: center;
         object-fit: cover;
         height: 100%;
@@ -99,6 +100,8 @@ h2 {
 
 .services {
     color: variable.$white;
+    padding-top: 70px !important; 
+    margin-top: -50px !important;
 
     .title {
         font-family: variable.$fontPlayfair;
@@ -117,11 +120,26 @@ h2 {
         margin-bottom: 25px;
         margin-top: 20px;
     }
+
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+#contact-us {
+    padding-top: 40px;
+}
+
+.contact-us-wrapper .part-of-bg {
+    background-color: variable.$dark-green;
+    z-index: -1;
+    height: 100%;
 }
 
 .contact-us {
     background-color: variable.$dark-green;
-    margin: 100px 0;
+    margin: 100px auto;
 
     .title {
         font-family: variable.$fontPlayfair;
@@ -149,6 +167,11 @@ h2 {
 .footer {
     color: variable.$white;
     margin: 0 auto;
+
+    .get-in-touch svg{
+        min-width: 20px;
+        min-height: 20px;
+    }
 
     .first {
         margin-bottom: 30px;
@@ -183,8 +206,19 @@ h2 {
     }
 
     .social-media-icon {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         margin: 0;
+        border-radius: 50%;
+        transition: .3s;
+        padding: 1px;
+
+        &:hover {
+            box-shadow: yellow 0px 0px 15px, yellow 0px 0px 15px;
+        }
     }
+}
+
+.current_page_item {
+    border-bottom: 2px solid white;
 }
