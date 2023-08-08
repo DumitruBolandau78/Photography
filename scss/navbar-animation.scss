@@ -1,6 +1,6 @@
 @use 'variable';
 
-.nav-bar ul {
+.nav-bar ul, .nav-bar-mobile ul {
     list-style: none;
     margin: 0;
     padding: 0 !important;
@@ -62,7 +62,6 @@
         color: #EF0107 !important;
         position: relative !important;
         text-decoration: none !important;
-        font-size: 18px !important;
     }
     
     .active::before,

@@ -1,12 +1,12 @@
-.nav-bar ul {
+.nav-bar ul, .nav-bar-mobile ul {
   list-style: none;
   margin: 0;
   padding: 0 !important;
 }
-.nav-bar ul li {
+.nav-bar ul li, .nav-bar-mobile ul li {
   padding: 0 20px;
 }
-.nav-bar ul a {
+.nav-bar ul a, .nav-bar-mobile ul a {
   font-family: "Playfair Display";
   font-weight: 500;
   text-decoration: none;
@@ -16,7 +16,8 @@
   font-size: 18px;
 }
 .nav-bar ul a::before,
-.nav-bar ul a::after {
+.nav-bar ul a::after, .nav-bar-mobile ul a::before,
+.nav-bar-mobile ul a::after {
   content: "";
   height: 14px;
   width: 14px;
@@ -24,7 +25,7 @@
   transition: all 0.35s ease;
   opacity: 0;
 }
-.nav-bar ul a::before {
+.nav-bar ul a::before, .nav-bar-mobile ul a::before {
   content: "";
   right: 0;
   top: 0;
@@ -32,7 +33,7 @@
   border-right: 3px solid #2E640F;
   transform: translate(-100%, 50%);
 }
-.nav-bar ul a::after {
+.nav-bar ul a::after, .nav-bar-mobile ul a::after {
   content: "";
   left: 0;
   bottom: 0;
@@ -41,22 +42,23 @@
   transform: translate(100%, -50%);
 }
 .nav-bar ul a:hover::before,
-.nav-bar ul a:hover::after {
+.nav-bar ul a:hover::after, .nav-bar-mobile ul a:hover::before,
+.nav-bar-mobile ul a:hover::after {
   transform: translate(0, 0);
   opacity: 1;
 }
-.nav-bar ul a:hover {
+.nav-bar ul a:hover, .nav-bar-mobile ul a:hover {
   color: #3E8914;
 }
-.nav-bar ul .active {
+.nav-bar ul .active, .nav-bar-mobile ul .active {
   padding: 0.5em 0.8em !important;
   color: #EF0107 !important;
   position: relative !important;
   text-decoration: none !important;
-  font-size: 18px !important;
 }
 .nav-bar ul .active::before,
-.nav-bar ul .active::after {
+.nav-bar ul .active::after, .nav-bar-mobile ul .active::before,
+.nav-bar-mobile ul .active::after {
   content: "";
   height: 14px !important;
   width: 14px !important;
@@ -64,7 +66,7 @@
   transition: all 0.35s ease !important;
   opacity: 0 !important;
 }
-.nav-bar ul .active::before {
+.nav-bar ul .active::before, .nav-bar-mobile ul .active::before {
   content: "";
   right: 0 !important;
   top: 0 !important;
@@ -74,7 +76,7 @@
   transform: translate(0, 0) !important;
   opacity: 1 !important;
 }
-.nav-bar ul .active::after {
+.nav-bar ul .active::after, .nav-bar-mobile ul .active::after {
   content: "";
   left: 0 !important;
   bottom: 0 !important;

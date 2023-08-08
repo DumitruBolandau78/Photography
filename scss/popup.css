@@ -1,5 +1,62 @@
 .popup {
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.7);
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 5px;
+  border-left: 3px solid #2E640F;
+  border-top: 3px solid #2E640F;
+  border-bottom: 3px solid #EF0107;
+  border-right: 3px solid #EF0107;
+  opacity: 0;
+  pointer-events: none;
+}
+.popup.active {
+  z-index: 1000;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+.popup .popup-icon-close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  fill: #2E640F;
+}
+.popup .popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.popup .popup-form h3 {
+  font-family: "Playfair Display";
+  font-weight: bold;
+}
+.popup .popup-form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  border-bottom: 2px solid #EF0107;
+  padding: 5px 20px;
+}
+.popup .popup-form textarea {
+  width: 100%;
+  border: 1px solid #C6C6C6;
+  outline: none;
+  resize: none;
+  padding: 20px;
+}
+.popup .popup-form button {
+  padding: 10px 40px;
+  border: none;
+  outline: none;
+  background-color: #2E640F;
+  color: #fff;
 }/*# sourceMappingURL=popup.css.map */

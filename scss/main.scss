@@ -1,7 +1,39 @@
 @use 'variable';
 
-*, *::after, *::before {
+$h-padding: 10px;
+$h-width: 36px;
+$h-height: 24px;
+$h-background-color: transparent;
+$h-line-color: #fff;
+$h-hover-line-color: red;
+$h-line-height: 2px;
+$h-border-radius: 4px;
+$h-transition-time: 0.4s;
+$h-transition-function: ease;
+$h-transition-opacity: 0;
+$h-vertical-gap: 13px;
+$h-initial-opposition: 5px;
+$h-hide-distance: $h-width + $h-padding;
+
+@mixin line-props {
+    width: 100%;
+    height: $h-line-height;
+    background-color: $h-line-color;
+    border-radius: $h-border-radius;
+    position: absolute;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: $h-transition-time;
+}
+
+*,
+*::after,
+*::before {
     box-sizing: border-box !important;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -20,16 +52,152 @@ h2 {
     top: 0;
     left: 0;
     right: 0;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
 
     .logo a {
         font-family: 'Panchang-Variable';
+    }
+
+    .nav-bar-mobile {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        max-width: 400px;
+        min-height: 100vh;
+        width: 100%;
+        background-color: rgba(22, 22, 22, 1);
+        padding: 20px;
+        border-left: 1px solid #fff;
+        transition: .7s ease-in-out;
+
+        ul {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: 400;
+                font-size: 20px;
+            }
+        }
+
+        &.show {
+            right: 0 !important;
+        }
+    }
+}
+
+.hamburger {
+    padding: $h-padding;
+    cursor: pointer;
+    display: none !important;
+    overflow: hidden;
+    background-color: $h-background-color;
+
+    &__container {
+        width: $h-width;
+        height: $h-height;
+        position: relative;
+    }
+
+    &:hover &__inner {
+        transform: translate(-#{$h-hide-distance}, 50%);
+        opacity: $h-transition-opacity;
+    }
+
+    &:hover &__inner::before,
+    &:hover &__inner::after {
+        transform: translate(#{$h-hide-distance * 2}, 0);
+        opacity: $h-transition-opacity;
+    }
+
+    &.is-active &__inner {
+        display: none;
+    }
+
+    &__inner {
+        @include line-props();
+        top: 50%;
+        transform: translate($h-initial-opposition, -50%);
+        opacity: 1;
+
+        &::before,
+        &::after {
+            @include line-props();
+
+            content: "";
+            opacity: 1;
+            transform: translate(-#{$h-initial-opposition}, 0);
+        }
+
+        &::before {
+            top: -#{$h-vertical-gap};
+        }
+
+        &::after {
+            top: $h-vertical-gap;
+        }
+    }
+
+    &:hover &__hidden {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+
+    &:hover &__hidden::before,
+    &:hover &__hidden::after {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    &.is-active &__hidden {
+        opacity: 1;
+        transform: rotate(45deg);
+    }
+
+    &.is-active &__hidden::before {
+        transform: translate(0, #{$h-vertical-gap}) rotate(90deg);
+        transform-origin: center;
+    }
+
+    &.is-active &__hidden::after {
+        transform-origin: center;
+        transform: translate(0, -#{$h-vertical-gap}) rotate(0);
+    }
+
+    &__hidden {
+        opacity: 0;
+        @include line-props();
+
+        background-color: $h-hover-line-color;
+        top: 50%;
+        transform: translate(#{$h-hide-distance}, -50%);
+
+        &::before,
+        &::after {
+            @include line-props();
+            background-color: $h-hover-line-color;
+
+            content: "";
+            transform: translate(#{$h-hide-distance * 2}, 0);
+        }
+
+        &::before {
+            top: -#{$h-vertical-gap};
+        }
+
+        &::after {
+            top: $h-vertical-gap;
+        }
     }
 }
 
 .home {
     color: variable.$white;
-    padding-top: 250px !important; 
+    padding-top: 250px !important;
     margin-top: -100px !important;
+
     a {
         text-decoration: none;
         color: variable.$white;
@@ -50,6 +218,8 @@ h2 {
     img {
         width: 100%;
         max-width: 90%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .description {
@@ -76,9 +246,9 @@ h2 {
 }
 
 .about {
-    padding-top: 100px !important; 
+    padding-top: 100px !important;
     margin-top: -50px !important;
-    
+
     .title {
         font-family: variable.$fontPlayfair;
     }
@@ -100,14 +270,14 @@ h2 {
 
 .services {
     color: variable.$white;
-    padding-top: 70px !important; 
+    padding-top: 70px !important;
     margin-top: -50px !important;
 
     .title {
         font-family: variable.$fontPlayfair;
     }
 
-    .description .text{
+    .description .text {
         color: rgba(248, 246, 224, 0.6);
     }
 
@@ -115,7 +285,7 @@ h2 {
         margin-top: 150px;
     }
 
-    .something-awesome .title{
+    .something-awesome .title {
         font-family: variable.$fontPlayfair;
         margin-bottom: 25px;
         margin-top: 20px;
@@ -168,7 +338,7 @@ h2 {
     color: variable.$white;
     margin: 0 auto;
 
-    .get-in-touch svg{
+    .get-in-touch svg {
         min-width: 20px;
         min-height: 20px;
     }
@@ -180,7 +350,7 @@ h2 {
     }
 
     .margin-bottom100 {
-        margin-bottom: 100px !important;
+        margin-bottom: 100px;
     }
 
     .first.favor {
@@ -193,7 +363,7 @@ h2 {
         color: variable.$white;
     }
 
-    .second > div {
+    .second>div {
         display: flex;
         align-items: center;
         word-break: break-all;
@@ -217,8 +387,4 @@ h2 {
             box-shadow: yellow 0px 0px 15px, yellow 0px 0px 15px;
         }
     }
-}
-
-.current_page_item {
-    border-bottom: 2px solid white;
 }
