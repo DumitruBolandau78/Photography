@@ -1,10 +1,25 @@
 @use 'variable';
 
+.popup-wrapper {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+    background-color: rgba(0, 0, 0, .8);
+
+    &.active-popup {
+        opacity: 1;
+        pointer-events: all;
+        z-index: 999;
+    }
+}
+
 .popup {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(.7);
-    max-width: 500px;
+    transform: scale(.7);
+    max-width: 400px;
     width: 100%;
     background-color: #fff;
     padding: 40px 30px;
@@ -15,10 +30,11 @@
     border-right: 3px solid #EF0107;
     opacity: 0;
     pointer-events: none;
+    transition: .5s;
 
     &.active {
         z-index: 1000;
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
         opacity: 1;
         pointer-events: all;
     }
