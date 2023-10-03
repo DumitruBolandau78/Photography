@@ -17,6 +17,12 @@ links.forEach((link) => {
     });
 });
 
+document.querySelectorAll('.nav-bar-mobile a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-bar-mobile').classList.remove('show');
+    });
+});
+
 window.addEventListener("scroll", animationOnScroll);
 linksParent.addEventListener("click", animationOnClick);
 linksMobileParent.addEventListener("click", animationOnClick);
